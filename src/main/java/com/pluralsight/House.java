@@ -1,13 +1,15 @@
 package com.pluralsight;
 
 public class House extends Asset {
+
     private String address;
-    private int    condition;
-    private int    squareFoot;
-    private int    lotSize;
+    private int condition;
+    private int squareFoot;
+    private int lotSize;
 
     public House(String description, String dateAcquired, double originalCost,
                  String address, int condition, int squareFoot, int lotSize) {
+
         super(description, dateAcquired, originalCost);
 
         if (address == null)
@@ -23,33 +25,49 @@ public class House extends Asset {
         this.condition = condition;
         this.squareFoot = squareFoot;
         this.lotSize = lotSize;
+
     }
 
-    public String getAddress(){
+    public String getAddress() {
         return address;
     }
-    public int getCondition()  {
+
+    public int getCondition() {
         return condition;
     }
+
     public int getSquareFoot() {
         return squareFoot;
     }
-    public int getLotSize()    {
+
+    public int getLotSize() {
         return lotSize;
     }
 
     @Override
     public double getValue() {
+
         double pricePerSquareFoot;
 
         switch (condition) {
-            case 1:  pricePerSquareFoot = 180.00; break;
-            case 2:  pricePerSquareFoot = 130.00; break;
-            case 3:  pricePerSquareFoot =  90.00; break;
-            case 4:  pricePerSquareFoot =  80.00; break;
-            default: pricePerSquareFoot =   0.00;
+            case 1:
+                pricePerSquareFoot = 180.00;
+                break;
+            case 2:
+                pricePerSquareFoot = 130.00;
+                break;
+            case 3:
+                pricePerSquareFoot = 90.00;
+                break;
+            case 4:
+                pricePerSquareFoot = 80.00;
+                break;
+            default:
+                pricePerSquareFoot = 0.00;
         }
 
         return (pricePerSquareFoot * squareFoot) + (0.25 * lotSize);
+
     }
+
 }

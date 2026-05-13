@@ -3,11 +3,13 @@ package com.pluralsight;
 import java.util.ArrayList;
 
 public class Main {
+
     public static void main(String[] args) {
+
         ArrayList<Asset> assets = new ArrayList<Asset>();
 
         assets.add(new House(
-                "My house",
+                "Deenie House",
                 "2015-06-15",
                 320000.00,
                 "742 Evergreen Terrace, Springfield, IL",
@@ -79,6 +81,6 @@ public class Main {
             System.out.println("------------------------------------------------------------");
         }
 
-        System.out.println("============================================================");
     }
+
 }
